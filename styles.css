@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+/* ===== GERAL ===== */
+body {
+   background-color: #000000;
+   color: #d9b66f;
+   font-family: 'Cinzel', serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   padding: 20px;
+   overflow: hidden;
+}
+
+/* ===== SEÇÃO DE ACESSO ===== */
+.access {
+   text-align: center;
+   width: 100%;
+   max-width: 420px;
+}
+
+.access-box {
+   background: #2b1b2b;
+   border: 2px solid #d9b66f;
+   border-radius: 12px;
+   padding: 40px 30px;
+   box-shadow: 0 0 25px rgba(217, 182, 111, 0.15);
+}
+
+.access h2 {
+   font-size: 1.3rem;
+   margin-bottom: 20px;
+   color: #f5d88a;
+}
+
+.access input {
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #d9b66f;
+   border-radius: 8px;
+   background: transparent;
+   color: #f5d88a;
+   font-size: 1rem;
+   text-align: center;
+   outline: none;
+   margin-bottom: 15px;
+}
+
+.access input::placeholder {
+   color: #bfa76a;
+}
+
+.access button {
+   background-color: #d9b66f;
+   color: #2b1b2b;
+   border: none;
+   border-radius: 8px;
+   padding: 10px 20px;
+   font-size: 1rem;
+   cursor: pointer;
+   font-weight: 600;
+   transition: all 0.3s ease;
+}
+
+.access button:hover {
+   background-color: #f5d88a;
+}
+
+.access .hint {
+   margin-top: 10px;
+   font-size: 0.85rem;
+   color: #bfa76a;
+}
+
+/* ===== CONVITE ===== */
+.invitation {
+   background-color: #2b1b2b;
+   border: 2px solid #d9b66f;
+   border-radius: 12px;
+   padding: 40px 30px;
+   max-width: 420px;
+   width: 100%;
+   text-align: center;
+   position: relative;
+   box-shadow: 0 0 25px rgba(217, 182, 111, 0.15);
+}
+
+/* ===== DECORAÇÕES ART DÉCO ===== */
+.invitation::before,
+.invitation::after {
+   content: "";
+   position: absolute;
+   border: 2px solid #d9b66f;
+   width: 30px;
+   height: 30px;
+}
+
+.invitation::before {
+   top: 15px;
+   left: 15px;
+   border-right: none;
+   border-bottom: none;
+}
+
+.invitation::after {
+   bottom: 15px;
+   right: 15px;
+   border-left: none;
+   border-top: none;
+}
+
+/* ===== TEXTOS ===== */
+.greeting {
+   font-family: 'Cinzel', serif;
+   font-size: 1.4rem;
+   letter-spacing: 2px;
+   margin-bottom: 10px;
+}
+
+.age {
+   font-size: 4rem;
+   font-weight: 700;
+   color: #f5d88a;
+}
+
+.name {
+   font-family: 'Great Vibes', cursive;
+   font-size: 2rem;
+   color: #f5d88a;
+   margin: 10px 0 30px;
+}
+
+/* ===== DETALHES ===== */
+.details {
+   font-size: 0.95rem;
+   line-height: 1.8;
+   letter-spacing: 0.5px;
+   color: #e9d9b4;
+}
+
+.details p:not(:last-child) {
+   border-bottom: 1px solid rgba(217, 182, 111, 0.3);
+   padding-bottom: 8px;
+   margin-bottom: 8px;
+}
+
+/* ===== ANIMAÇÕES ===== */
+.hidden {
+   display: none;
+   opacity: 0;
+}
+
+.fade-in {
+   animation: fadeIn 1s ease forwards;
+}
+
+.fade-out {
+   animation: fadeOut 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+      transform: translateY(15px);
+   }
+
+   to {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+@keyframes fadeOut {
+   from {
+      opacity: 1;
+   }
+
+   to {
+      opacity: 0;
+      transform: translateY(-10px);
+   }
+}
+
+/* ===== ERRO ===== */
+.shake {
+   animation: shake 0.4s;
+}
+
+@keyframes shake {
+
+   0%,
+   100% {
+      transform: translateX(0);
+   }
+
+   25% {
+      transform: translateX(-5px);
+   }
+
+   75% {
+      transform: translateX(5px);
+   }
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 480px) {
+
+   .access-box,
+   .invitation {
+      padding: 30px 20px;
+   }
+
+   .age {
+      font-size: 3rem;
+   }
+
+   .name {
+      font-size: 1.8rem;
+   }
+
+   .details {
+      font-size: 0.9rem;
+   }
+}

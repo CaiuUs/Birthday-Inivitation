@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Birthday invitation</title>
+   <link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+   <!-- ===== SEÇÃO DE ACESSO ===== -->
+   <section class="access" id="access">
+      <div class="access-box">
+         <h2>Digite aqui o numero do seu cartao para receber o convite</h2>
+         <input type="text" id="cardInput" placeholder="Digite aqui..." />
+         <button id="enterButton">Entrar</button>
+      </div>
+   </section>
+
+   <!-- ===== CONVITE ===== -->
+   <main class="invitation hidden" id="invitation">
+      <div class="border">
+         <h2 class="greeting">Aniversário</h2>
+         <h1 class="age">Caius</h1>
+         <h3 class="name">21 anos</h3>
+
+         <div class="details">
+            <p>25 Outubro | Sábado | 19:30</p>
+            <p>Rua Goiânia - QD 112 - LT 10</p>
+         </div>
+      </div>
+   </main>
+
+   <script>
+      const button = document.getElementById('enterButton');
+      const input = document.getElementById('cardInput');
+      const access = document.getElementById('access');
+      const invitation = document.getElementById('invitation');
+
+      button.addEventListener('click', () => {
+         if (input.value.trim() !== "") {
+            access.classList.add('fade-out');
+            setTimeout(() => {
+               access.style.display = 'none';
+               invitation.classList.remove('hidden');
+               invitation.classList.add('fade-in');
+            }, 800);
+         } else {
+            input.classList.add('shake');
+            setTimeout(() => input.classList.remove('shake'), 400);
+         }
+      });
+   </script>
+</body>
+
+</html>
